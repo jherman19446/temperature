@@ -13,14 +13,15 @@ def FtoC(temperature):
     kelvinC = (celsius + 273.15)
     print("Your temperature in Celsius is " + str(celsius) + " and your temperature in Kelvin is " + str(kelvinC))
 
-if degrees[:-1].isnumeric() and degrees[-1] == "C":
-    temperature = degrees.replace("C","")
-    CtoF(temperature)
+if degrees[:-1].isnumeric() == True:
+    if degrees[-1] == "C":
+        temperature = degrees.replace("C","")
+        CtoF(temperature)
     
     
-elif degrees[:-1].isnumeric() and degrees[-1] == "F":
-    temperature = degrees.replace("F","")
-    FtoC(temperature)
+    elif degrees[-1] == "F":
+        temperature = degrees.replace("F","")
+        FtoC(temperature)
     
 
 else:
