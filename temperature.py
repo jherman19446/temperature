@@ -1,5 +1,5 @@
 degrees = input("What is the temperature indicated by F or C ").upper()
-
+temperature = degrees
 
 def CtoF(temperature):
     temperature = int(temperature)
@@ -13,16 +13,20 @@ def FtoC(temperature):
     kelvinC = (celsius + 273.15)
     print("Your temperature in Celsius is " + str(celsius) + " and your temperature in Kelvin is " + str(kelvinC))
 
+if degrees[-1].isnumeric() == False:
+        temperature = degrees.rstrip('C F')
+        print(temperature)
+
+
 if degrees[:-1].isnumeric() == True:
     if degrees[-1] == "C":
-        temperature = degrees.replace("C","")
         CtoF(temperature)
     
     
     elif degrees[-1] == "F":
-        temperature = degrees.replace("F","")
         FtoC(temperature)
     
+  
 
 else:
     print("Please check your input and try again")
